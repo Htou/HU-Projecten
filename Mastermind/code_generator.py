@@ -1,7 +1,8 @@
+from Mastermind.mastermind_globals import *
+import random
+
+
 def generateCode():
-    global gCode
-    gCode = random.choices(kleuren, k=4)
-    print(gCode)
-
-generateCode()
-
+    global mCode
+    mCode = random.choices(collors, k=4)
+    print("Er is een geheime kleurcode gegenereerd:", mCode)
