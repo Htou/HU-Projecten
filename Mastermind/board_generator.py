@@ -1,8 +1,7 @@
 from Mastermind.mastermind_globals import *
 
 
-def generateBoard():
-    global board
+def generateboard():
     x = int(input("Met hoeveel rijen wil je spelen? "))
     for i in range(x):
         board.append([])
@@ -10,3 +9,11 @@ def generateBoard():
             board[i].append("X")
     for k in board:
         return k
+
+
+def generatefeedbackboard():
+    x = len(board)
+    for i in range(x):
+        feedbackBoard.append([])
+    for j in feedbackBoard:
+        return j
