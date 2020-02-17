@@ -6,8 +6,10 @@ from Mastermind.feedbackgiver import *
 
 generateCode()
 generateBoard()
+generateFeedbackboard()
 
-feedback()
+for i, x in zip(board, feedbackBoard):
+    print(i," ", x)
 
 # for i in board:
 #     guesses()

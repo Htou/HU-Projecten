@@ -9,4 +9,4 @@ def generateBoard():
         for j in range(4):
             board[i].append("X")
     for k in board:
-        print(k)
+        return k
