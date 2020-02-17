@@ -3,9 +3,16 @@ from Mastermind.mastermind_globals import *
 
 def guesses():
     for i in range(4):
+        print("")
         print(collors)
-        board[0][i] = input("Stel een code samen voor rij: " + str(row) + " met de bovenstaande kleuren ")
+        board[playingRow][i] = input("Stel een code samen voor rij: " + str(row) + " met de bovenstaande kleuren ")
         print("")
         for j in board:
             print(j)
-    print("")
+
+
+def nextRow():
+    global row
+    global playingRow
+    row += 1
+    playingRow = playingRow - 1

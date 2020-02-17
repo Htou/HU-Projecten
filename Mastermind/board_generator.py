@@ -10,5 +10,3 @@ def generateBoard():
             board[i].append("X")
     for k in board:
         print(k)
-    print("")
-
