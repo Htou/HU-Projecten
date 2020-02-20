@@ -1,6 +1,5 @@
 from Mastermind.mastermind_globals import *
 from Mastermind.visualizer import *
-from Mastermind.feedbackgiver import *
 
 
 def guesses():
@@ -12,3 +11,7 @@ def guesses():
         visualizer()
 
 
+def nextrow():
+    global row, playingRow
+    row = row + 1
+    playingRow = playingRow - 1
