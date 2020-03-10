@@ -16,7 +16,7 @@ for i in first:
     print("")
     break
 
-#dit kan ook:
+# dit kan ook:
 # first = productsCollection.find_one({}, {"_id": 0, "name": 1, "price.mrsp": 1})
 # for i, j in first.items():
 #     if isinstance(j, dict):
@@ -34,7 +34,7 @@ for i in find:
         print("")
         break
 
-#dit kan ook!
+# dit kan ook!
 # find = productsCollection.find({"brand": {"$regex": "^R"}})
 # for i in find:
 #     print(i["brand"])
@@ -43,13 +43,9 @@ for i in find:
 prices = productsCollection.find()
 lst = []
 for i in prices:
-    lst. append(i["price"]["mrsp"])
+    lst.append(i["price"]["mrsp"])
 average = sum(lst) / len(lst)
 print("Het gemiddelde is van alle prijzen is:", int(average))
 
-#kan ook
+# kan ook
 # prices = productsCollection.find({}, {"_id": 0, "price.mrsp": 1})
-
-
-
-
