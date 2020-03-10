@@ -1,6 +1,5 @@
 from pymongo import MongoClient
 import mysql.connector
-import MySQLdb.cursors
 import random
 
 client = MongoClient('localhost', 27017)
@@ -12,7 +11,7 @@ print(db)
 print(productsCollection)
 print("")
 
-temptype = MySQLdb.cursors.DictCursor
+
 
 mydb = mysql.connector.connect(
     host="localhost",
@@ -20,7 +19,7 @@ mydb = mysql.connector.connect(
     passwd="11326",
     db="huwebshop"
 )
-mycursor = mydb.cursor(MySQLdb.cursors.DictCursor)
+mycursor = mydb.cursor(buffered=True, dictionary=True)
 
 print(mydb)
 
@@ -45,8 +44,7 @@ def selectTable():
     mycursor.execute("SELECT * FROM Products")
     myresult = mycursor.fetchall()
 
-    for x in myresult:
-        return (x)
+    return myresult
 
 
 def priceAverage():
@@ -60,12 +58,14 @@ def priceAverage():
 priceAverage()
 
 
-# def randomChooserAverageCalc():
-#     lst = []
-#     for i in selectTable():
-#         lst.append(i)
-#     random = random.choice(lst["price"])
+def randomChooserAverageCalc():
+    lst = []
+    for i in selectTable():
+        lst.append(i["price"])
+    rand = random.choice(lst)
+    res = max(lst, key=lambda x: abs(x - rand))
+    print("De absolute afweiking van de gekozen nummer: " + str(rand) +" is", res)
 
-
+randomChooserAverageCalc()
 
 
